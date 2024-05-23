@@ -16,6 +16,9 @@ app.use("/",customerRouter)
 app.use("/products",productRouter)
 app.use("/orders",orderRouter)
 
+app.get("/", (req, res, next) => {
+  res.json({ msg: "welcome to my api" });
+})
 
 app.use("*", (req, res, next) => {
   res.json({ msg: "404 not found" });
